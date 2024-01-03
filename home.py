@@ -1,7 +1,5 @@
 import streamlit as st
-import pandas as pd
 import json
-import html
 from bs4 import BeautifulSoup
 import base64
 from PIL import Image
