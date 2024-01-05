@@ -61,7 +61,9 @@ def renderQuestion(test):
         question = BeautifulSoup(test["preguntas"][st.session_state.q]["pregunta"],"lxml").text
         st.write(question)
         base64_img = test["preguntas"][st.session_state.q]["foto64"]
-        if base64_img !="0":
+        if base64_img =="0" or base64_img =="NO Existe el fichero ":
+            pass
+        else:
             image_bytes = base64.b64decode(base64_img)
             image = Image.open(io.BytesIO(image_bytes))
             st.image(image,width=300)
